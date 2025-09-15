@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mahadev Token (MHDV) — Official</title>
+  <meta name="description" content="Mahadev Token (MHDV) — Official community token inspired by Lord Shiva. Learn how to buy, connect wallet, and join the community." />
+  <style>
+    :root{--accent:#9b59b6;--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;color-scheme:dark}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#071028 0%, #061022 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.08)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:50px;height:50px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2980b9);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#fff;box-shadow:0 0 12px rgba(155,89,182,0.5)}
+    nav a{color:var(--muted);text-decoration:none;margin:0 12px;font-size:15px;transition:0.2s}
+    nav a:hover{color:#fff}
+    .hero{max-width:1100px;margin:34px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:14px;box-shadow:0 0 16px rgba(0,0,0,0.3)}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px}
+    h1{margin:0 0 6px 0;font-size:32px}
+    p.lead{color:var(--muted);margin:0 0 14px 0;font-size:16px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 0 10px rgba(0,0,0,0.25)}
+    .small{font-size:13px;color:var(--muted)}
+    button{background:var(--accent);border:none;padding:10px 16px;border-radius:8px;color:white;cursor:pointer;font-weight:600;transition:0.2s}
+    button:hover{opacity:0.9;transform:scale(1.02)}
+    .muted{color:var(--muted)}
+    ul{padding-left:18px}
+    footer{max-width:1100px;margin:28px auto;color:var(--muted);font-size:14px;text-align:center;padding-top:14px;border-top:1px solid rgba(255,255,255,0.08)}
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}.brand h3{display:none}.logo{width:44px;height:44px}}
+    .info-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0}
+    input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .linklike{color:var(--accent);text-decoration:none}
+    .linklike:hover{text-decoration:underline}
+    .warning{background:#3b2b2b;padding:12px;border-radius:10px;color:#ffd6d6;margin-top:12px}
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">ॐ</div>
+      <div>
+        <h3 style="margin:0;font-size:18px">Mahadev Token <span class="muted">(MHDV)</span></h3>
+        <div class="small">The Official Token of Devotion — Lord Shiva</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#buy">Buy</a>
+      <a href="#contact">Community</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <div id="address" class="small muted">Not connected</div>
+      <button id="connectBtn">Connect Wallet</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="grid">
+      <section>
+        <h1>Mahadev Token (MHDV)</h1>
+        <p class="lead">Mahadev Token is a decentralized community project inspired by Lord Shiva. Built on BNB Smart Chain (BSC), it represents power, trust, and devotion. Low supply ensures scarcity, while strong community ensures growth.</p>
+
+        <div class="card" id="about">
+          <h4>About</h4>
+          <p class="small">Mahadev Token (MHDV) is live on Binance Smart Chain. Use the contract address to add it to your wallet or trade on PancakeSwap. Liquidity is locked to build trust. Join our community on Telegram and Twitter to stay updated.</p>
+          <div class="info-row">
+            <div class="small">Contract:</div>
+            <div id="contractDisplay" class="small linklike">0x2Ca702eD50d51A3224Fe9cf5770E73df52B7b870</div>
+          </div>
+          <div class="info-row">
+            <div class="small">Network:</div>
+            <div class="small muted">BNB Smart Chain (BSC)</div>
+          </div>
+          <div style="margin-top:10px">
+            <a id="scanLink" class="linklike" href="https://bscscan.com/address/0x2Ca702eD50d51A3224Fe9cf5770E73df52B7b870" target="_blank">View on BscScan</a>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card" id="tokenomics">
+          <h4>Tokenomics</h4>
+          <ul>
+            <li>Total Supply: <strong id="totalSupply">107,926,900</strong></li>
+            <li>Decimals: <strong id="decimals">18</strong></li>
+            <li>Symbol: <strong id="symbol">MHDV</strong></li>
+            <li>Network: <strong>BNB Smart Chain</strong></li>
+          </ul>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card" id="buy">
+          <h4>How to Buy</h4>
+          <p class="small">Steps: Install MetaMask → Switch to BNB Smart Chain → Use PancakeSwap link below (make sure liquidity is available). Always verify the contract address before buying.</p>
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <button id="addTokenBtn">Add Token to MetaMask</button>
+            <a id="swapLink" class="linklike" href="https://pancakeswap.finance/swap?outputCurrency=0x2Ca702eD50d51A3224Fe9cf5770E73df52B7b870" target="_blank">Open PancakeSwap</a>
+          </div>
+          <div class="warning">
+            <strong>Warning:</strong> Double-check the contract address. Never share your private keys. Only use trusted platforms.
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card" id="contact">
+          <h4>Community & Socials</h4>
+          <p class="small">Join the official community channels for latest news, airdrops, and discussions.</p>
+          <p class="small">Telegram: <a href="https://t.me/MahadevToken" class="linklike" target="_blank">t.me/MahadevToken</a><br>
+          Twitter: <a href="https://twitter.com/mahadevtoken" class="linklike" target="_blank">@mahadevtoken</a><br>
+          Website: <a href="https://mahadevtoken.wixsite.com/my-site-1" class="linklike" target="_blank">mahadevtoken.wixsite.com</a></p>
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="card">
+          <h4>Quick Settings (edit in code)</h4>
+          <label class="small">Contract address</label>
+          <input id="contractInput" type="text" value="0x2Ca702eD50d51A3224Fe9cf5770E73df52B7b870" />
+          <div style="height:8px"></div>
+          <label class="small">Decimals</label>
+          <input id="decInput" type="text" value="18" />
+          <div style="height:8px"></div>
+          <label class="small">Symbol</label>
+          <input id="symInput" type="text" value="MHDV" />
+          <div style="height:8px"></div>
+          <label class="small">Total supply</label>
+          <input id="supplyInput" type="text" value="107926900" />
+          <div style="height:10px"></div>
+          <button id="applyBtn">Apply</button>
+          <div style="height:10px"></div>
+          <div class="small muted">After updating contract address, click "Apply" to refresh explorer & swap links.</div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <h4>Deploy Instructions</h4>
+          <ol class="small">
+            <li>Save this file as <code>index.html</code>.</li>
+            <li>Push to GitHub repo and deploy on GitHub Pages, Netlify, or Vercel.</li>
+            <li>(Optional) Buy a custom domain and link it for professional branding.</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div>© 2025 Mahadev Token — Powered by community. This is not financial advice. Always DYOR.</div>
+  </footer>
+
+  <script>
+    const CONFIG = {
+      network: 'bsc',
+      contract: '0x2Ca702eD50d51A3224Fe9cf5770E73df52B7b870',
+      decimals: 18,
+      symbol: 'MHDV',
+      totalSupply: '107926900',
+      logo: '',
+    };
+
+    const connectBtn = document.getElementById('connectBtn');
+    const addressDiv = document.getElementById('address');
+    const addTokenBtn = document.getElementById('addTokenBtn');
+    const contractDisplay = document.getElementById('contractDisplay');
+    const scanLink = document.getElementById('scanLink');
+    const swapLink = document.getElementById('swapLink');
+    const contractInput = document.getElementById('contractInput');
+    const decInput = document.getElementById('decInput');
+    const symInput = document.getElementById('symInput');
+    const supplyInput = document.getElementById('supplyInput');
+    const applyBtn = document.getElementById('applyBtn');
+
+    function refreshUI(){
+      contractDisplay.innerText = CONFIG.contract;
+      document.getElementById('decimals').innerText = CONFIG.decimals;
+      document.getElementById('symbol').innerText = CONFIG.symbol;
+      document.getElementById('totalSupply').innerText = CONFIG.totalSupply;
+      const explorer = CONFIG.network==='bsc' ? 'https://bscscan.com/address/' : 'https://etherscan.io/address/';
+      scanLink.href = explorer + CONFIG.contract;
+      if(CONFIG.network==='bsc'){
+        swapLink.href = 'https://pancakeswap.finance/swap?outputCurrency=' + CONFIG.contract;
+      } else {
+        swapLink.href = 'https://app.uniswap.org/#/swap?outputCurrency=' + CONFIG.contract;
+      }
+    }
+
+    applyBtn.onclick = ()=>{
+      CONFIG.contract = contractInput.value.trim() || CONFIG.contract;
+      CONFIG.decimals = parseInt(decInput.value) || 18;
+      CONFIG.symbol = symInput.value.trim() || 'MHDV';
+      CONFIG.totalSupply = supplyInput.value.trim() || '107926900';
+      refreshUI();
+      alert('Applied. Save file to keep changes.');
+    }
+
+    async function connectWallet(){
+      if(!window.ethereum){alert('Install MetaMask or compatible wallet.');return;}
+      try{
+        await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const addr = await signer.getAddress();
+        addressDiv.innerText = addr;
+        connectBtn.innerText = 'Connected';
+      }catch(e){alert('Connection failed: ' + (e.message||e));}
+    }
+
+    connectBtn.onclick = connectWallet;
+
+    addTokenBtn.onclick = async ()=>{
+      if(!window.ethereum){alert('Install MetaMask'); return;}
+      try{
+        await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {type: 'ERC20',options:{address: CONFIG.contract,symbol: CONFIG.symbol,decimals: CONFIG.decimals,image: CONFIG.logo||undefined}},
+        });
+      }catch(err){alert('Add token failed: ' + (err.message||err));}
+    }
+
+    refreshUI();
+  </script>
+</body>
+</html>
