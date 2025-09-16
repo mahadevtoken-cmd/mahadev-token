@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mahadev Token (MHDV) — Airdrop Registration</title>
+  <meta name="description" content="Register for Mahadev (MHDV) airdrop. Provide wallet, Twitter and Telegram to participate." />
+  <style>
+    :root{--accent:#6c5ce7;--bg:#071027;--card:#081022;--muted:#9aa4b2;color-scheme:dark}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial; margin:0; background:linear-gradient(180deg,#041028,#061022); color:#e8eef6; -webkit-font-smoothing:antialiased}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#ff7eb3,#6c5ce7);display:flex;align-items:center;justify-content:center;font-weight:800}
+    main{max-width:1000px;margin:26px auto;padding:18px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .card{background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    h1{margin:0 0 6px 0;font-size:24px}
+    p.lead{color:var(--muted);margin:0 0 14px 0}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type="text"], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button{background:var(--accent);border:none;padding:10px 14px;border-radius:8px;color:white;cursor:pointer;font-weight:700}
+    .muted{color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+    .row{display:flex;gap:8px}
+    .hint{font-size:13px;color:#c9d4e6;opacity:0.95}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:8px;border-bottom:1px dashed rgba(255,255,255,0.03);font-size:13px}
+    .pill{display:inline-block;padding:6px 8px;border-radius:8px;background:#0e1530;color:var(--muted);font-size:13px}
+    footer{max-width:1000px;margin:22px auto;color:var(--muted);font-size:13px;text-align:center}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.logo{width:44px;height:44px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">ॐ</div>
+      <div>
+        <div style="font-weight:700">Mahadev Token <span class="muted">(MHDV)</span></div>
+        <div class="small">Airdrop registration — official</div>
+      </div>
+    </div>
+    <div class="small muted">Contract: <span id="contractSpan">0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847</span></div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <!-- left: form -->
+      <section>
+        <div class="card">
+          <h1>Airdrop Registration</h1>
+          <p class="lead">Mahadev (MHDV) के airdrop के लिए अपना wallet address, Twitter और Telegram डालें। नियम पढ़कर ही submit करें।</p>
+
+          <div style="margin-top:12px">
+            <label>Wallet address (BNB Chain / BSC)</label>
+            <input id="wallet" type="text" placeholder="0x..." />
+          </div>
+
+          <div style="margin-top:10px">
+            <label>Twitter handle (optional)</label>
+            <input id="twitter" type="text" placeholder="@yourhandle (without @ allowed)" />
+          </div>
+
+          <div style="margin-top:10px">
+            <label>Telegram username (optional)</label>
+            <input id="tg" type="text" placeholder="@username or username" />
+          </div>
+
+          <div style="margin-top:10px">
+            <label>Notes / Proof (optional)</label>
+            <textarea id="note" rows="3" placeholder="Proof link: retweet/follow etc."></textarea>
+          </div>
+
+          <div style="margin-top:10px" class="small">
+            <input id="agree" type="checkbox" /> मैं प्रमाणित करता हूँ कि यह मेरा सही wallet address है और मैंने नियम पढ़ लिए हैं.
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <button id="submitBtn">Register for Airdrop</button>
+            <button id="exportBtn" style="background:#2dbeff">Export CSV</button>
+            <button id="clearBtn" style="background:#555">Clear Local</button>
+          </div>
+
+          <div style="margin-top:12px" class="small muted">
+            Registration localStorage में save होगा — admin CSV export करके distribution कर सकता है।
+          </div>
+
+          <div style="height:10px"></div>
+          <div id="message" class="hint"></div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card">
+          <h3>Rules / Eligibility</h3>
+          <ul>
+            <li>एक wallet/व्यक्ति एक बार ही register कर सकता है।</li>
+            <li>Twitter/Telegram proof चाहिए तो note में link डालें — optional</li>
+            <li>Team का निर्णय अंतिम होगा; गलत जानकारी पर disqualify किया जा सकता है।</li>
+            <li>Token distribution बाद में multisend से होगी — पेज केवल registration के लिए है।</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <!-- right: admin / info -->
+      <aside>
+        <div class="card">
+          <h3>Project Info</h3>
+          <div class="small">Token: <strong>MHDV</strong></div>
+          <div style="height:6px"></div>
+          <div class="small">Network: <strong>BNB Chain</strong></div>
+          <div style="height:8px"></div>
+          <div class="small">Contract: <a id="scanLink" class="pill" target="_blank">View on BscScan</a></div>
+          <div style="height:12px"></div>
+
+          <div class="small">Admin instructions:</div>
+          <ol class="small">
+            <li>Export CSV → take wallet column → use Multisend (Team Finance / BscScan tools) to distribute tokens.</li>
+            <li>पहले 2–3 wallets पर small test send करें।</li>
+            <li>Gas fee के लिए BNB आवश्यक है।</li>
+          </ol>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <h3>Registered (preview)</h3>
+          <div id="count" class="small">0 entries</div>
+          <table id="tablePreview" aria-hidden="true">
+            <thead><tr><th>Wallet</th><th>Twitter</th><th>Telegram</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    This page is for Mahadev Token (MHDV) airdrop registration. Verify all addresses and contracts before distribution.
+  </footer>
+
+  <script>
+    // CONTRACT (your provided address)
+    const CONTRACT = '0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847';
+    document.getElementById('contractSpan').innerText = CONTRACT;
+    document.getElementById('scanLink').href = 'https://bscscan.com/token/' + CONTRACT;
+    document.getElementById('scanLink').innerText = 'BscScan';
+
+    // storage key
+    const KEY = 'mhdv_airdrop_regs_v1';
+
+    // DOM refs
+    const walletInput = document.getElementById('wallet');
+    const twitterInput = document.getElementById('twitter');
+    const tgInput = document.getElementById('tg');
+    const noteInput = document.getElementById('note');
+    const agreeInput = document.getElementById('agree');
+    const submitBtn = document.getElementById('submitBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const messageDiv = document.getElementById('message');
+    const previewCount = document.getElementById('count');
+    const tableBody = document.querySelector('#tablePreview tbody');
+
+    function isAddress(addr){
+      if(!addr) return false;
+      if(typeof addr !== 'string') return false;
+      if(addr.length !== 42) return false;
+      return /^0x[a-fA-F0-9]{40}$/.test(addr);
+    }
+
+    function loadRegs(){ try{ const raw = localStorage.getItem(KEY); if(!raw) return []; return JSON.parse(raw); }catch(e){ return []; } }
+    function saveRegs(arr){ localStorage.setItem(KEY, JSON.stringify(arr)); }
+    function renderPreview(){
+      const regs = loadRegs();
+      previewCount.innerText = regs.length + ' entries';
+      tableBody.innerHTML = '';
+      regs.slice(-30).reverse().forEach(r=>{
+        const tr = document.createElement('tr');
+        const td1 = document.createElement('td'); td1.innerText = r.wallet;
+        const td2 = document.createElement('td'); td2.innerText = r.twitter || '-';
+        const td3 = document.createElement('td'); td3.innerText = r.telegram || '-';
+        tr.appendChild(td1); tr.appendChild(td2); tr.appendChild(td3);
+        tableBody.appendChild(tr);
+      });
+    }
+
+    submitBtn.addEventListener('click', ()=>{
+      messageDiv.innerText='';
+      const wallet = (walletInput.value||'').trim();
+      const twitter = (twitterInput.value||'').trim().replace(/^@/,'');
+      const telegram = (tgInput.value||'').trim().replace(/^@/,'');
+      const note = (noteInput.value||'').trim();
+
+      if(!isAddress(wallet)){
+        messageDiv.innerText = 'कृपया valid BSC wallet address डालें (0x...).';
+        return;
+      }
+      if(!agreeInput.checked){
+        messageDiv.innerText = 'कृपया नियम स्वीकार करें (checkbox)।';
+        return;
+      }
+
+      const normalized = wallet;
+      const regs = loadRegs();
+      if(regs.some(r => r.wallet.toLowerCase() === normalized.toLowerCase())){
+        messageDiv.innerText = 'यह wallet पहले से register है।';
+        return;
+      }
+
+      const entry = { wallet: normalized, twitter: twitter||'', telegram: telegram||'', note: note||'', ts: new Date().toISOString() };
+      regs.push(entry);
+      saveRegs(regs);
+      renderPreview();
+      messageDiv.innerText = 'Registration saved locally. Admin can Export CSV.';
+      walletInput.value=''; twitterInput.value=''; tgInput.value=''; noteInput.value=''; agreeInput.checked=false;
+    });
+
+    exportBtn.addEventListener('click', ()=>{
+      const regs = loadRegs();
+      if(!regs || regs.length===0){ alert('No registrations to export.'); return; }
+      const header = ['wallet','twitter','telegram','note','timestamp'];
+      const rows = regs.map(r => [
+        r.wallet,
+        r.twitter ? '"' + r.twitter.replace(/"/g,'""') + '"' : '',
+        r.telegram ? '"' + r.telegram.replace(/"/g,'""') + '"' : '',
+        r.note ? '"' + r.note.replace(/"/g,'""') + '"' : '',
+        r.ts
+      ].join(','));
+      const csv = header.join(',') + '\n' + rows.join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const now = new Date().toISOString().replace(/[:.-]/g,'');
+      a.download = 'mhdv_airdrop_' + now + '.csv';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    clearBtn.addEventListener('click', ()=>{
+      if(confirm('Local registrations clear कर दिए जाएँ? (undo नहीं होगा)')){
+        localStorage.removeItem(KEY);
+        renderPreview();
+      }
+    });
+
+    // startup
+    renderPreview();
+  </script>
+</body>
+</html>
