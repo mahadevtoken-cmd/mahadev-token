@@ -3,257 +3,107 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mahadev Token (MHDV) — Official</title>
-  <meta name="description" content="Mahadev Token (MHDV) — token info, airdrop registration, and wallet connect." />
+  <title>Mahadev Token (MHDV) — Airdrop</title>
   <style>
-    :root{--accent:#6c63ff;--bg:#071123;--card:#0b1220;--muted:#9aa4b2;color-scheme:dark}
-    *{box-sizing:border-box}
-    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; margin:0; background:linear-gradient(180deg,#041022 0%, #061022 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
-    header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.04)}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#00b894);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
-    nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-size:15px}
-    main{max-width:1100px;margin:28px auto;padding:20px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
-    h1{margin:0 0 6px 0;font-size:28px}
-    p.lead{color:var(--muted);margin:0 0 12px 0}
-    .card{background:var(--card);padding:16px;border-radius:10px}
-    .small{font-size:13px;color:var(--muted)}
-    button{background:var(--accent);border:none;padding:10px 14px;border-radius:8px;color:white;cursor:pointer;font-weight:600}
-    input[type="text"]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
-    .linklike{color:var(--accent);text-decoration:none}
-    .warning{background:#331b1b;padding:10px;border-radius:8px;color:#ffd6d6;margin-top:10px}
-    footer{max-width:1100px;margin:28px auto;color:var(--muted);font-size:14px}
-    @media (max-width:880px){.grid{grid-template-columns:1fr}.brand h3{display:none}.logo{width:46px;height:46px}}
-    .row{display:flex;gap:10px;align-items:center}
-    label.small{display:block;margin-bottom:6px;color:var(--muted);font-size:13px}
-    .muted{color:var(--muted)}
-    a.button-like{display:inline-block;padding:8px 12px;background:#0f1724;border-radius:8px;color:var(--accent);text-decoration:none;border:1px solid rgba(255,255,255,0.03)}
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e6eef6;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #1e293b;
+      padding: 16px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 10px;
+    }
+    h2 { margin-top: 0; }
+    .card {
+      background: #0b1220;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .small { font-size: 14px; color: #9aa4b2; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button {
+      background: #2563eb;
+      color: white;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #1d4ed8; }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/ethers@6/dist/ethers.umd.min.js"></script>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="logo">ॐ</div>
-      <div>
-        <h3 style="margin:0;font-size:16px">Mahadev Token <span class="muted">(MHDV)</span></h3>
-        <div class="small">Official token page — Community & Airdrop</div>
+  <header>🚀 Mahadev Token (MHDV) — Airdrop Registration</header>
+
+  <div class="container">
+    
+    <div class="card">
+      <h2>Project Info</h2>
+      <p><strong>Token:</strong> Mahadev Token (MHDV)</p>
+      <p><strong>Network:</strong> Binance Smart Chain (BEP-20)</p>
+      <p><strong>Contract Address:</strong> 
+        <a href="https://bscscan.com/token/0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847" target="_blank" rel="noopener noreferrer">
+          0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Rules / Eligibility</h2>
+      <ol>
+        <li>Telegram channel join करें।</li>
+        <li>Twitter पर हमें follow करें और pinned tweet को retweet करें।</li>
+        <li>अपने BSC wallet address को नीचे form में submit करें।</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Airdrop Form</h2>
+      <p class="small">अपना BEP-20 wallet address दर्ज करें (MetaMask / TrustWallet का BSC address):</p>
+      <input type="text" id="wallet" placeholder="0x..." style="width:100%;padding:10px;border-radius:6px;border:1px solid #334155;background:#0f172a;color:white;" />
+      <div style="margin-top:12px;">
+        <button onclick="register()">Submit</button>
       </div>
+      <p id="msg" class="small"></p>
     </div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#airdrop">Airdrop</a>
-      <a href="#buy">Buy</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div style="display:flex;gap:10px;align-items:center">
-      <div id="address" class="small muted">Not connected</div>
-      <button id="connectBtn">Connect Wallet</button>
+    <div class="card" id="contact">
+      <h2>Community Links</h2>
+      <p class="small">
+        👉 <a href="https://twitter.com/mahadevtoken" target="_blank" rel="noopener noreferrer">Twitter</a><br>
+        👉 <a href="https://t.me/mahadevtoken" target="_blank" rel="noopener noreferrer">Telegram</a>
+      </p>
     </div>
-  </header>
 
-  <main>
-    <div class="grid">
-      <section>
-        <h1>Mahadev Token (MHDV)</h1>
-        <p class="lead">Aapka token. Yahan se users project info dekh sakte hain, token add kar sakte hain, aur airdrop register kar sakte hain.</p>
+  </div>
 
-        <div class="card" id="about">
-          <h4>Project Info</h4>
-          <p class="small"><strong>Token:</strong> Mahadev Token (MHDV) <br>
-          <strong>Network:</strong> Binance Smart Chain (BEP-20) <br>
-          <strong>Contract:</strong> <span id="contractDisplay">0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847</span></p>
-          <p class="small">Total Supply, tokenomics aur liquidity details ke liye BscScan par contract check karein.</p>
-          <p><a id="scanLink" class="linklike" href="https://bscscan.com/address/0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847" target="_blank">View on BscScan</a></p>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card" id="airdrop">
-          <h4>Airdrop Registration</h4>
-          <p class="small">Rules / Eligibility:</p>
-          <ul class="small">
-            <li>1 wallet per user.</li>
-            <li>Twitter/X follow + Telegram join optional (if required).</li>
-            <li>Duplicate or bot entries reject honge.</li>
-          </ul>
-
-          <div style="height:8px"></div>
-          <form id="airdropForm" class="small">
-            <label class="small">Wallet address (BEP-20) *</label>
-            <input id="walletAddr" type="text" placeholder="0x..." required />
-
-            <div style="height:8px"></div>
-            <label class="small">Twitter / X handle (optional)</label>
-            <input id="twitter" type="text" placeholder="@yourhandle (optional)" />
-
-            <div style="height:8px"></div>
-            <label class="small">Telegram (optional)</label>
-            <input id="telegram" type="text" placeholder="t.me/yourname (optional)" />
-
-            <div style="height:10px"></div>
-            <div class="row">
-              <button type="button" id="submitAirdrop">Register</button>
-              <a id="downloadCsv" class="button-like" href="#" download="airdrop-sample.csv">Export CSV (admin)</a>
-            </div>
-            <div id="airdropMsg" style="margin-top:10px" class="small muted"></div>
-          </form>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card" id="buy">
-          <h4>How to buy</h4>
-          <p class="small">Steps: Install MetaMask → Switch to BSC → Open PancakeSwap (swap link below) → Swap BNB for MHDV (if liquidity available).</p>
-          <div style="display:flex;gap:10px;margin-top:10px">
-            <button id="addTokenBtn">Add token to MetaMask</button>
-            <a id="swapLink" class="linklike" href="https://pancakeswap.finance/swap?outputCurrency=0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847" target="_blank">Open PancakeSwap</a>
-          </div>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card" id="contact">
-          <h4>Community</h4>
-          <p class="small">Join our channels:</p>
-          <p class="small">
-            Telegram: <a id="tgLink" class="linklike" href="https://t.me/mahadevtoken" target="_blank">t.me/mahadevtoken</a><br>
-            Twitter/X: <a id="xLink" class="linklike" href="https://x.com/mahadevtoken" target="_blank">@mahadevtoken</a>
-          </p>
-        </div>
-
-      </section>
-
-      <aside>
-        <div class="card">
-          <h4>Quick Info</h4>
-          <div class="small"><strong>Symbol:</strong> MHDV</div>
-          <div class="small"><strong>Decimals:</strong> 18</div>
-          <div style="height:10px"></div>
-          <div class="small muted">Note: Airdrop registrations are stored locally in browser (demo). Real production requires backend or Google Sheet / server to collect entries.</div>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card">
-          <h4>Admin / Deploy tips</h4>
-          <ol class="small">
-            <li>Repo → Add this file as <code>index.html</code>.</li>
-            <li>Settings → Pages → Source = <strong>main / (root)</strong>.</li>
-            <li>For a real airdrop use server-side script to validate & distribute tokens.</li>
-          </ol>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <footer>
-    <div style="max-width:1100px;margin:auto">Mahadev Token — This is a community page. Not financial advice. Verify contract before any transaction.</div>
-  </footer>
-
-<script>
-  // ----- Config (do not change unless needed) -----
-  const CONTRACT = '0x2Ce2b409075Af6D8a108D3f9f50A00fbf12B5847';
-  const SYMBOL = 'MHDV';
-  const DECIMALS = 18;
-  // Update DOM
-  document.getElementById('contractDisplay').innerText = CONTRACT;
-  document.getElementById('scanLink').href = 'https://bscscan.com/address/' + CONTRACT;
-  document.getElementById('swapLink').href = 'https://pancakeswap.finance/swap?outputCurrency=' + CONTRACT;
-
-  // Wallet connect (ethers)
-  const connectBtn = document.getElementById('connectBtn');
-  const addressDiv = document.getElementById('address');
-
-  async function connectWallet(){
-    if(!window.ethereum){ alert('MetaMask ya compatible wallet install karo.'); return; }
-    try{
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      const addr = await signer.getAddress();
-      addressDiv.innerText = addr;
-      connectBtn.innerText = 'Connected';
-      // fill wallet input in airdrop form (optional)
-      const w = document.getElementById('walletAddr');
-      if(w && w.value.trim()==='') w.value = addr;
-    } catch(e){
-      console.error(e);
-      alert('Connection failed: ' + (e.message||e));
+  <script>
+    function register() {
+      let w = document.getElementById("wallet").value.trim();
+      if (!w.startsWith("0x") || w.length !== 42) {
+        document.getElementById("msg").innerText = "❌ कृपया सही BSC wallet address डालें।";
+        return;
+      }
+      // यहाँ आप आगे localStorage या CSV export भी जोड़ सकते हो
+      document.getElementById("msg").innerText = "✅ आपका address register हो गया: " + w;
     }
-  }
-  connectBtn.onclick = connectWallet;
+  </script>
 
-  // Add token to MetaMask
-  document.getElementById('addTokenBtn').onclick = async ()=>{
-    if(!window.ethereum){ alert('MetaMask ya compatible wallet install karo.'); return; }
-    try{
-      const wasAdded = await window.ethereum.request({
-        method: 'wallet_watchAsset',
-        params: {
-          type: 'ERC20',
-          options: { address: CONTRACT, symbol: SYMBOL, decimals: DECIMALS }
-        }
-      });
-      if(wasAdded) alert('Token wallet me add ho gaya.');
-      else alert('User cancelled token add.');
-    }catch(err){ console.error(err); alert('Error: '+(err.message||err)); }
-  };
-
-  // Simple local "airdrop registration" storage (demo only)
-  const form = document.getElementById('airdropForm');
-  const msg = document.getElementById('airdropMsg');
-  const downloadBtn = document.getElementById('downloadCsv');
-
-  function validAddress(a){
-    return typeof a==='string' && a.startsWith('0x') && a.length===42;
-  }
-
-  // load stored entries (localStorage key)
-  function loadEntries(){ try{ return JSON.parse(localStorage.getItem('mhdv_airdrop')||'[]'); }catch(e){return[]} }
-  function saveEntries(e){ localStorage.setItem('mhdv_airdrop', JSON.stringify(e)); }
-
-  document.getElementById('submitAirdrop').onclick = ()=>{
-    const w = document.getElementById('walletAddr').value.trim();
-    const tw = document.getElementById('twitter').value.trim();
-    const tg = document.getElementById('telegram').value.trim();
-    if(!validAddress(w)){ msg.innerText = 'कृपया valid BEP-20 wallet address डालें (0x...)'; return; }
-    const entries = loadEntries();
-    if(entries.find(x=>x.wallet.toLowerCase()===w.toLowerCase())){
-      msg.innerText = 'यह wallet पहले register है।';
-      return;
-    }
-    entries.push({wallet:w, twitter:tw, telegram:tg, ts:new Date().toISOString()});
-    saveEntries(entries);
-    msg.innerText = 'Registration saved locally (demo). Admin export कर सकता है CSV से.';
-    document.getElementById('walletAddr').value = '';
-    document.getElementById('twitter').value = '';
-    document.getElementById('telegram').value = '';
-  };
-
-  // prepare CSV download (admin)
-  downloadBtn.onclick = (e)=>{
-    const arr = loadEntries();
-    if(!arr.length){ alert('No registrations to export.'); return; }
-    const csv = ['wallet,twitter,telegram,timestamp'].concat(arr.map(r=>${r.wallet},${(r.twitter||'').replace(/,/g,'')},${(r.telegram||'').replace(/,/g,'')},${r.ts})).join('\\n');
-    const blob = new Blob([csv], {type:'text/csv'});
-    const url = URL.createObjectURL(blob);
-    downloadBtn.href = url;
-    // download attribute already set
-  };
-
-  // Auto-populate wallet field if MetaMask connected earlier
-  (async ()=>{
-    if(window.ethereum && window.ethereum.selectedAddress){
-      document.getElementById('walletAddr').value = window.ethereum.selectedAddress;
-      addressDiv.innerText = window.ethereum.selectedAddress;
-      connectBtn.innerText = 'Connected';
-    }
-  })();
-
-</script>
 </body>
 </html>
