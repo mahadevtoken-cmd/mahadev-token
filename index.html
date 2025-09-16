@@ -161,18 +161,52 @@
     const addressDiv=document.getElementById('address');
     const addTokenBtn=document.getElementById('addTokenBtn');
 
-    async function connectWallet(){
-      if(!window.ethereum){alert('Install MetaMask');return;}
-      try{
-        await window.ethereum.request({method:'eth_requestAccounts'});
-        const provider=new ethers.BrowserProvider(window.ethereum);
-        const signer=await provider.getSigner();
-        const addr=await signer.getAddress();
-        addressDiv.innerText=addr;
-        connectBtn.innerText='Connected';
-      }catch(e){console.error(e);alert('Connection failed');}
+    async function connectWallet() {
+  try {
+    if (!window.ethereum) {
+      alert('MetaMask या compatible wallet install करो।');
+      return;
     }
-    connectBtn.onclick=connectWallet;
+
+    // account request
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    if (!accounts || accounts.length === 0) {
+      alert('No account मिला। MetaMask unlock करके allow करो।');
+      return;
+    }
+
+    const addr = accounts[0];
+    addressDiv.innerText = addr;
+    connectBtn.innerText = 'Connected';
+    connectBtn.disabled = true;
+
+  } catch (err) {
+    console.error('Connect error', err);
+    alert('Connection failed: ' + (err.message || err));
+  }
+}
+
+// button पर click event bind करो
+if (connectBtn) connectBtn.addEventListener('click', connectWallet);
+
+// account / chain changes handle करो
+if (window.ethereum) {
+  window.ethereum.on('accountsChanged', (accounts) => {
+    if (!accounts || accounts.length === 0) {
+      addressDiv.innerText = 'Not connected';
+      connectBtn.innerText = 'Connect Wallet';
+      connectBtn.disabled = false;
+    } else {
+      addressDiv.innerText = accounts[0];
+      connectBtn.innerText = 'Connected';
+      connectBtn.disabled = true;
+    }
+  });
+
+  window.ethereum.on('chainChanged', () => {
+    window.location.reload();
+  });
+}
 
     addTokenBtn.onclick=async()=>{
       if(!window.ethereum){alert('Install MetaMask');return;}
